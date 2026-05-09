@@ -1,0 +1,22 @@
+-- Insertion de données dans la table Matiere
+INSERT INTO Matiere (nom_matiere, coefficient, prof_id) VALUES
+('Mathématiques', 3, 1),
+('Physique', 2, 3),
+('Informatique', 4, 2),
+('Chimie', 2, 5),
+('Biologie', 2, 4),
+('Statistiques', 3, 6),
+('Mathématiques Avancées', 4, 7),
+('Programmation', 5, 8),
+('Physique Appliquée', 3, 9),
+('Biologie Moléculaire', 3, 10),
+('Anglais Général', 2, 11),
+('Linguistique Anglaise', 3, 11),
+('Philosophie Antique', 3, 12),
+('Philosophie Moderne', 4, 12),
+('Comptabilité', 3, 13),
+('Gestion des Entreprises', 4, 13),
+('Espagnol', 2, 14),
+('Allemand', 2, 14),
+('Histoire Médiévale', 3, 15),
+('Histoire Contemporaine', 4, 15);
