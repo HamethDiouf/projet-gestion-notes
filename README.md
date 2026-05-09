@@ -58,6 +58,40 @@ Il s’appuie sur un **MCD (Modèle Conceptuel de Données)** et un **schéma re
 
 ---
 
+## ⚙️ Installation et outils nécessaires
+
+Pour exécuter ce projet, il faut installer les logiciels suivants :  
+- **PostgreSQL** → moteur de base de données.  
+- **pgAdmin** → interface graphique pour gérer PostgreSQL.  
+- **VS Code** → éditeur de code avec l’extension **SQLTools** pour exécuter les requêtes.  
+- **Git** → pour cloner et gérer le dépôt GitHub.  
+
+---
+
+## 🚀 Utilisation avec PostgreSQL et pgAdmin
+
+### 1. PostgreSQL
+- Installer PostgreSQL depuis le site officiel.  
+- Créer une base de données `gestion_notes`.  
+- Importer les scripts `select.sql` et `postgres Local.session.sql` pour créer les tables et insérer les données.  
+
+### 2. pgAdmin
+- Ouvrir pgAdmin et se connecter au serveur local.  
+- Vérifier que la base `gestion_notes` est bien créée.  
+- Exécuter les requêtes SQL pour tester (exemple : `SELECT * FROM Etudiant;`).  
+
+### 3. VS Code + SQLTools
+- Installer l’extension **SQLTools** et le driver PostgreSQL.  
+- Configurer une connexion :  
+  - Host : `localhost`  
+  - Port : `5432`  
+  - Database : `gestion_notes`  
+  - User : `postgres`  
+  - Password : ton mot de passe PostgreSQL  
+- Lancer les scripts SQL directement depuis VS Code.  
+
+---
+
 ## ✅ Conclusion
 
 Dans ce projet, on a conçu et organisé la base de données de gestion des notes en séparant chaque entité dans son propre dossier, en créant les schémas MCD et relationnel, et en regroupant les visuels dans un dossier images. Les fichiers sources .drawio permettent de modifier facilement les diagrammes dans Draw.io, assurant la clarté et la reproductibilité du travail.

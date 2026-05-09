@@ -16,6 +16,7 @@ SELECT * FROM enseignement;
 -- Sélection de tous les étudiants
 SELECT * FROM etudiant;
 
+
 -- Sélection de toutes les inscriptions
 SELECT * FROM inscription;
 
@@ -73,7 +74,10 @@ WHERE nom_classe BETWEEN 'A' AND 'J'
 GROUP BY c.id_classe, c.nom_classe
 ORDER BY c.nom_classe;
 
-
+-- Vérifier la connexion et la table Étudiant
+SELECT * 
+FROM Etudiant
+LIMIT 10;
 
 -- Top 3 étudiants par moyenne
 SELECT e.id_etudiant, e.nom, e.prenom, AVG(ev.note) AS moyenne
