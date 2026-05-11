@@ -92,6 +92,16 @@ Pour exécuter ce projet, il faut installer les logiciels suivants :
 
 ---
 
+## 🧑‍💻 Exemples de requêtes SQL
+
+-- Liste des étudiants par classe
+SELECT e.nom, e.prenom, c.nom_classe
+FROM Etudiant e
+JOIN Inscription i ON e.id_etudiant = i.id_etudiant
+JOIN Classe c ON i.id_classe = c.id_classe;
+
+
+
 ## ✅ Conclusion
 
 Dans ce projet, on a conçu et organisé la base de données de gestion des notes en séparant chaque entité dans son propre dossier, en créant les schémas MCD et relationnel, et en regroupant les visuels dans un dossier images. Les fichiers sources .drawio permettent de modifier facilement les diagrammes dans Draw.io, assurant la clarté et la reproductibilité du travail.
