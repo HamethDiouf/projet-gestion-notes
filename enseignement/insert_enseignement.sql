@@ -117,3 +117,4 @@ INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
 (13, 13, 15),
 (14, 14, 15),
 (15, 15, 15);
+
