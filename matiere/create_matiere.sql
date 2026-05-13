@@ -2,9 +2,5 @@
 CREATE TABLE Matiere (
     id_matiere SERIAL PRIMARY KEY,
     nom_matiere VARCHAR(50) NOT NULL,
-    coefficient INT,
-    prof_id INT REFERENCES Professeur(id_prof),
-    filiere_id INT REFERENCES Filiere(id_filiere)
+    coefficient INT
 );
-
-

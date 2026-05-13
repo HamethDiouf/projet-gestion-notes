@@ -15,3 +15,4 @@ INSERT INTO Professeur (nom, prenom, departement, genre, email) VALUES
 ('Barry','Michel','Gestion','M','michel.barry@univ.sn'),
 ('Sow','Lucie','Langues Étrangères','F','lucie.sow@univ.sn'),
 ('Toure','Daniel','Histoire','M','daniel.toure@univ.sn');
+

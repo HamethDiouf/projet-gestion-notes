@@ -15,3 +15,4 @@ INSERT INTO Filiere (nom_filiere) VALUES
 ('Gestion'),
 ('Langues Étrangères'),
 ('Histoire');
+

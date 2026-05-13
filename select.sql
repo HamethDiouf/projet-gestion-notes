@@ -1,31 +1,36 @@
--- ============================== SECTION FILIERES ==============================
+-- =================================
+-- SECTION FILIÈRE
+-- =================================
 -- Sélection de toutes les filières
-SELECT * FROM filiere;
+SELECT * FROM Filiere;
 
 
--- ============================== SECTION CLASSES ==============================
--- Sélection de toutes les classes
-SELECT * FROM classe;
+-- =================================
+-- SECTION NIVEAU
+-- =================================
+-- Sélection de tous les niveaux
+SELECT * FROM Niveau;
 
--- Nombre d'étudiants par classe (A à O)
-SELECT c.nom_classe, COUNT(i.id_etudiant) AS nombre_etudiants
-FROM Classe c
-LEFT JOIN Inscription i ON c.id_classe = i.id_classe
-WHERE nom_classe BETWEEN 'A' AND 'J'
-GROUP BY c.id_classe, c.nom_classe
-ORDER BY c.nom_classe;
+-- Nombre d'étudiants par niveau
+SELECT n.niveau, COUNT(i.id_etudiant) AS nombre_etudiants
+FROM Niveau n
+LEFT JOIN Inscription i ON n.id_niveau = i.id_niveau
+GROUP BY n.id_niveau, n.niveau
+ORDER BY n.niveau;
 
 
-
--- ============================== SECTION PROFESSEURS ==============================
+-- =================================
+-- SECTION PROFESSEURS
+-- =================================
 -- Sélection de tous les professeurs
-SELECT * FROM professeur;
+SELECT * FROM Professeur;
 
 
--- ============================== SECTION MATIERES ==============================
-
+-- =================================
+-- SECTION MATIÈRES
+-- =================================
 -- Sélection de toutes les matières
-SELECT * FROM matiere;
+SELECT * FROM Matiere;
 
 -- Moyenne des notes par matière (toutes les matières, même sans notes)
 SELECT m.nom_matiere, COALESCE(AVG(ev.note), 0) AS moyenne
@@ -34,16 +39,7 @@ LEFT JOIN Evaluation ev ON m.id_matiere = ev.id_matiere
 GROUP BY m.id_matiere, m.nom_matiere
 ORDER BY m.nom_matiere;
 
-
--- Moyenne des notes par matière (uniquement les matières avec des notes)
-SELECT m.nom_matiere AS matiere, AVG(ev.note) AS moyenne
-FROM Matiere m
-JOIN Evaluation ev ON m.id_matiere = ev.id_matiere
-GROUP BY m.nom_matiere
-ORDER BY moyenne DESC;
-
-
--- meilleurs et pires moyennes par matière
+-- Moyenne des notes par matière (uniquement celles avec notes)
 SELECT m.nom_matiere, AVG(ev.note) AS moyenne
 FROM Matiere m
 JOIN Evaluation ev ON m.id_matiere = ev.id_matiere
@@ -51,45 +47,36 @@ GROUP BY m.id_matiere, m.nom_matiere
 ORDER BY moyenne DESC;
 
 
-
--- ============================== SECTION ENSEIGNEMENTS ==============================
-
+-- =================================
+-- SECTION ENSEIGNEMENTS
+-- =================================
 -- Sélection de tous les enseignements
-SELECT * FROM enseignement;
+SELECT * FROM Enseignement;
 
 -- Liste des matières enseignées par chaque professeur
-SELECT p.nom, p.prenom, m.nom_matiere
-FROM Professeur p 
-LEFT JOIN Matiere m ON p.id_prof = m.prof_id
-ORDER BY p.nom, p.prenom;
-
--- Listes des matières enseignées par chaque professeur avec les filières associées
-SELECT p.nom || ' ' || p.prenom AS professeur,
-       f.nom_filiere,
-       m.nom_matiere
-FROM Matiere m
-JOIN Professeur p ON m.prof_id = p.id_prof
-JOIN Filiere f ON m.filiere_id = f.id_filiere
-ORDER BY f.nom_filiere, m.nom_matiere;
+SELECT p.nom, p.prenom, m.nom_matiere, n.niveau, e.date_debut, e.date_fin
+FROM Professeur p
+JOIN Enseignement e ON p.id_prof = e.prof_id
+JOIN Matiere m ON e.matiere_id = m.id_matiere
+JOIN Niveau n ON e.niveau_id = n.id_niveau
+ORDER BY p.nom, p.prenom, m.nom_matiere;
 
 
-
--- ============================== SECTION ETUDIANTS ==============================
-
+-- =================================
+-- SECTION ÉTUDIANTS
+-- =================================
 -- Sélection de tous les étudiants
-SELECT * FROM etudiant;
+SELECT * FROM Etudiant;
 
--- Nombre d'étudiants par classe avec nom de la filière
-SELECT c.nom_classe,
-       c.nom_niveau,
+-- Nombre d'étudiants par niveau avec filière
+SELECT n.niveau,
        f.nom_filiere,
        COUNT(i.id_etudiant) AS nombre_etudiants
-FROM Classe c
-JOIN Filiere f ON c.filiere_id = f.id_filiere
-LEFT JOIN Inscription i ON c.id_classe = i.id_classe
-GROUP BY c.id_classe, c.nom_classe, c.nom_niveau, f.nom_filiere
-ORDER BY c.nom_classe;
-
+FROM Niveau n
+JOIN Filiere f ON n.filiere_id = f.id_filiere
+LEFT JOIN Inscription i ON n.id_niveau = i.id_niveau
+GROUP BY n.id_niveau, n.niveau, f.nom_filiere
+ORDER BY n.niveau;
 
 -- Moyenne des notes par étudiant
 SELECT e.id_etudiant, e.nom, e.prenom, AVG(ev.note) AS moyenne
@@ -107,47 +94,33 @@ ORDER BY moyenne DESC
 LIMIT 3;
 
 
--- Vérification ciblée : étudiants id=14,100,127
-SELECT e.id_etudiant, e.nom, e.prenom, AVG(ev.note) AS moyenne
-FROM Etudiant e
-LEFT JOIN Evaluation ev ON e.id_etudiant = ev.id_etudiant
-WHERE e.id_etudiant IN (14,100,127)
-GROUP BY e.id_etudiant, e.nom, e.prenom;
-
-
--- ============================== SECTION INSCRIPTIONS ==============================
-
+-- =================================
+-- SECTION INSCRIPTIONS
+-- =================================
 -- Sélection de toutes les inscriptions
-SELECT * FROM inscription;
+SELECT * FROM Inscription;
 
--- Liste des étudiants avec leurs classes et dates d'inscription
+-- Liste des étudiants avec leurs niveaux et dates d'inscription
 SELECT i.id_inscription,
        e.nom || ' ' || e.prenom AS etudiant,
-       c.nom_classe,
+       n.niveau,
        i.date_inscription
 FROM Inscription i
 JOIN Etudiant e ON i.id_etudiant = e.id_etudiant
-JOIN Classe c ON i.id_classe = c.id_classe
-ORDER BY c.nom_classe, etudiant;
+JOIN Niveau n ON i.id_niveau = n.id_niveau
+ORDER BY n.niveau, etudiant;
 
 
--- Liste des étudiants inscrits dans chaque classe (A à O)
-SELECT c.nom_classe, e.nom, e.prenom
-FROM Classe c
-LEFT JOIN Inscription i ON c.id_classe = i.id_classe
-LEFT JOIN Etudiant e ON i.id_etudiant = e.id_etudiant
-ORDER BY c.nom_classe, e.nom, e.prenom;
-
-
--- ============================== SECTION EVALUATIONS ==============================
-
+-- =================================
+-- SECTION ÉVALUATIONS
+-- =================================
 -- Sélection de toutes les évaluations
-SELECT * FROM evaluation;
+SELECT * FROM Evaluation;
 
--- Affichage des évaluations avec noms d'étudiants et de matières
+-- Affichage des évaluations avec noms d'étudiants et matières
 SELECT ev.id_evaluation,
        e.nom || ' ' || e.prenom AS etudiant,
-       m.nom_matiere AS matiere,
+       m.nom_matiere,
        ev.note,
        ev.date_evaluation
 FROM Evaluation ev
@@ -169,24 +142,37 @@ HAVING COUNT(*) <> 5
 ORDER BY nb_notes DESC;
 
 
+-- =================================
+-- SECTION SUIVI
+-- =================================
+-- Sélection de tous les suivis
+-- Affichage du suivi des étudiants dans les matières avec les dates de début et fin ou en cours
+SELECT * FROM Suivi;
+
+-- Suivi des inscriptions et évaluations par étudiant
+SELECT e.id_etudiant, e.nom, e.prenom,
+       n.niveau,
+       i.date_inscription,
+       COUNT(ev.id_evaluation) AS nb_evaluations,
+       AVG(ev.note) AS moyenne
+FROM Etudiant e
+JOIN Inscription i ON e.id_etudiant = i.id_etudiant
+JOIN Niveau n ON i.id_niveau = n.id_niveau
+LEFT JOIN Evaluation ev ON e.id_etudiant = ev.id_etudiant
+GROUP BY e.id_etudiant, e.nom, e.prenom, n.niveau, i.date_inscription
+ORDER BY n.niveau, moyenne DESC;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- =================================
+-- SECTION APPARTENANCE
+-- =================================
+-- Appartenance des étudiants à une filière et niveau
+SELECT e.id_etudiant, e.nom, e.prenom,
+       f.nom_filiere,
+       n.niveau
+FROM Etudiant e
+JOIN Inscription i ON e.id_etudiant = i.id_etudiant
+JOIN Niveau n ON i.id_niveau = n.id_niveau
+JOIN Filiere f ON n.filiere_id = f.id_filiere
+ORDER BY f.nom_filiere, n.niveau, e.nom;
 

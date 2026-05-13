@@ -1,120 +1,120 @@
--- Classe 1 (A) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(1, 1, 1),
-(3, 2, 1),
-(2, 3, 1),
-(5, 4, 1),
-(4, 5, 1);
+-- Niveau 1 (Licence 1 Sciences) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(1, 1, 1, '2024-10-15', '2025-01-05'),
+(3, 2, 1, '2024-10-15', '2025-01-05'),
+(2, 3, 1, '2024-10-15', '2025-01-05'),
+(5, 4, 1, '2024-10-15', '2025-01-05'),
+(4, 5, 1, '2024-10-15', '2025-01-05');
 
--- Classe 2 (B) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(6, 6, 2),
-(7, 7, 2),
-(8, 8, 2),
-(9, 9, 2),
-(10, 10, 2);
+-- Niveau 2 (Licence 2 Sciences) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(6, 6, 2, '2024-10-15', '2025-01-05'),
+(7, 7, 2, '2024-10-15', '2025-01-05'),
+(8, 8, 2, '2024-10-15', '2025-01-05'),
+(9, 9, 2, '2024-10-15', '2025-01-05'),
+(10, 10, 2, '2024-10-15', '2025-01-05');
 
--- Classe 3 (C) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(11, 11, 3),
-(12, 12, 3),
-(13, 13, 3),
-(14, 14, 3),
-(15, 15, 3);
+-- Niveau 3 (Licence 3 Informatique) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(11, 11, 3, '2024-10-15', '2025-01-05'),
+(12, 12, 3, '2024-10-15', '2025-01-05'),
+(13, 13, 3, '2024-10-15', '2025-01-05'),
+(14, 14, 3, '2024-10-15', '2025-01-05'),
+(15, 15, 3, '2024-10-15', '2025-01-05');
 
--- Classe 4 (D) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(1, 1, 4),
-(3, 2, 4),
-(2, 3, 4),
-(5, 4, 4),
-(4, 5, 4);
 
--- Classe 5 (E) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(6, 6, 5),
-(7, 7, 5),
-(8, 8, 5),
-(9, 9, 5),
-(10, 10, 5);
+-- Niveau 4 (Master 1 Informatique) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(1, 1, 4, '2024-10-15', '2025-01-05'),
+(3, 2, 4, '2024-10-15', '2025-01-05'),
+(2, 3, 4, '2024-10-15', '2025-01-05'),
+(5, 4, 4, '2024-10-15', '2025-01-05'),
+(4, 5, 4, '2024-10-15', '2025-01-05');
 
--- Classe 6 (F) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(11, 11, 6),
-(12, 12, 6),
-(13, 13, 6),
-(14, 14, 6),
-(15, 15, 6);
+-- Niveau 5 (Master 2 Médecine) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(6, 6, 5, '2024-10-15', '2025-01-05'),
+(7, 7, 5, '2024-10-15', '2025-01-05'),
+(8, 8, 5, '2024-10-15', '2025-01-05'),
+(9, 9, 5, '2024-10-15', '2025-01-05'),
+(10, 10, 5, '2024-10-15', '2025-01-05');
 
--- Classe 7 (G) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(1, 1, 7),
-(3, 2, 7),
-(2, 3, 7),
-(5, 4, 7),
-(4, 5, 7);
+-- Niveau 6 (Licence 1 Médecine) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(11, 11, 6, '2024-10-15', '2025-01-05'),
+(12, 12, 6, '2024-10-15', '2025-01-05'),
+(13, 13, 6, '2024-10-15', '2025-01-05'),
+(14, 14, 6, '2024-10-15', '2025-01-05'),
+(15, 15, 6, '2024-10-15', '2025-01-05');
 
--- Classe 8 (H) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(6, 6, 8),
-(7, 7, 8),
-(8, 8, 8),
-(9, 9, 8),
-(10, 10, 8);
+-- Niveau 7 (Licence 2 Droit) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(1, 1, 7, '2024-10-15', '2025-01-05'),
+(3, 2, 7, '2024-10-15', '2025-01-05'),
+(2, 3, 7, '2024-10-15', '2025-01-05'),
+(5, 4, 7, '2024-10-15', '2025-01-05'),
+(4, 5, 7, '2024-10-15', '2025-01-05');
 
--- Classe 9 (I) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(11, 11, 9),
-(12, 12, 9),
-(13, 13, 9),
-(14, 14, 9),
-(15, 15, 9);
+-- Niveau 8 (Licence 3 Droit) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(6, 6, 8, '2024-10-15', '2025-01-05'),
+(7, 7, 8, '2024-10-15', '2025-01-05'),
+(8, 8, 8, '2024-10-15', '2025-01-05'),
+(9, 9, 8, '2024-10-15', '2025-01-05'),
+(10, 10, 8, '2024-10-15', '2025-01-05');
 
--- Classe 10 (J) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(1, 1, 10),
-(3, 2, 10),
-(2, 3, 10),
-(5, 4, 10),
-(4, 5, 10);
+-- Niveau 9 (Master 1 Économie) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(11, 11, 9, '2024-10-15', '2025-01-05'),
+(12, 12, 9, '2024-10-15', '2025-01-05'),
+(13, 13, 9, '2024-10-15', '2025-01-05'),
+(14, 14, 9, '2024-10-15', '2025-01-05'),
+(15, 15, 9, '2024-10-15', '2025-01-05');
 
--- Classe 11 (K) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(6, 6, 11),
-(7, 7, 11),
-(8, 8, 11),
-(9, 9, 11),
-(10, 10, 11);
+-- Niveau 10 (Master 2 Économie) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(1, 1, 10, '2024-10-15', '2025-01-05'),
+(3, 2, 10, '2024-10-15', '2025-01-05'),
+(2, 3, 10, '2024-10-15', '2025-01-05'),
+(5, 4, 10, '2024-10-15', '2025-01-05'),
+(4, 5, 10, '2024-10-15', '2025-01-05');
 
--- Classe 12 (L) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(11, 11, 12),
-(12, 12, 12),
-(13, 13, 12),
-(14, 14, 12),
-(15, 15, 12);
+-- Niveau 11 (Licence 1 Anglais) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(6, 6, 11, '2024-10-15', '2025-01-05'),
+(7, 7, 11, '2024-10-15', '2025-01-05'),
+(8, 8, 11, '2024-10-15', '2025-01-05'),
+(9, 9, 11, '2024-10-15', '2025-01-05'),
+(10, 10, 11, '2024-10-15', '2025-01-05');
 
--- Classe 13 (M) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(1, 1, 13),
-(3, 2, 13),
-(2, 3, 13),
-(5, 4, 13),
-(4, 5, 13);
+-- Niveau 12 (Licence 2 Philosophie) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(11, 11, 12, '2024-10-15', '2025-01-05'),
+(12, 12, 12, '2024-10-15', '2025-01-05'),
+(13, 13, 12, '2024-10-15', '2025-01-05'),
+(14, 14, 12, '2024-10-15', '2025-01-05'),
+(15, 15, 12, '2024-10-15', '2025-01-05');
 
--- Classe 14 (N) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(6, 6, 14),
-(7, 7, 14),
-(8, 8, 14),
-(9, 9, 14),
-(10, 10, 14);
+-- Niveau 13 (Licence 3 Gestion) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(1, 1, 13, '2024-10-15', '2025-01-05'),
+(3, 2, 13, '2024-10-15', '2025-01-05'),
+(2, 3, 13, '2024-10-15', '2025-01-05'),
+(5, 4, 13, '2024-10-15', '2025-01-05'),
+(4, 5, 13, '2024-10-15', '2025-01-05');
 
--- Classe 15 (O) avec 5 matières
-INSERT INTO Enseignement (prof_id, matiere_id, classe_id) VALUES
-(11, 11, 15),
-(12, 12, 15),
-(13, 13, 15),
-(14, 14, 15),
-(15, 15, 15);
+-- Niveau 14 (Master 1 Langues Étrangères) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(6, 6, 14, '2024-10-15', '2025-01-05'),
+(7, 7, 14, '2024-10-15', '2025-01-05'),
+(8, 8, 14, '2024-10-15', '2025-01-05'),
+(9, 9, 14, '2024-10-15', '2025-01-05'),
+(10, 10, 14, '2024-10-15', '2025-01-05');
 
+-- Niveau 15 (Master 2 Histoire) avec 5 matières
+INSERT INTO Enseignement (prof_id, matiere_id, niveau_id, date_debut, date_fin) VALUES
+(11, 11, 15, '2024-10-15', '2025-01-05'),
+(12, 12, 15, '2024-10-15', '2025-01-05'),
+(13, 13, 15, '2024-10-15', '2025-01-05'),
+(14, 14, 15, '2024-10-15', '2025-01-05'),
+(15, 15, 15, '2024-10-15', '2025-01-05');

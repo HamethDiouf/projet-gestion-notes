@@ -4,7 +4,7 @@ CREATE TABLE Etudiant (
     nom VARCHAR(50) NOT NULL,
     prenom VARCHAR(50) NOT NULL,
     date_naissance DATE,
-    email VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
     adresse VARCHAR(150),
-    classe_id INT REFERENCES Classe(id_classe)
+    niveau_id INT REFERENCES Niveau(id_niveau)
 );

@@ -7,8 +7,9 @@ Il s’appuie sur un **MCD (Modèle Conceptuel de Données)** et un **schéma re
 
 ## 📂 Structure du projet
 
-- **/classe**  
-  Contient les scripts et données liés aux classes (création, insertion, gestion des classes).
+- **/niveau**  
+  Définit les différents niveaux académiques (Licence 1, Licence 2, Master 1, etc.) et les relie à une filière.
+  Exemple : Licence 1 Sciences → filiere_id = 1.
 
 - **/etudiant**  
   Contient les scripts relatifs aux étudiants (ajout, mise à jour, gestion des informations personnelles).
@@ -21,9 +22,18 @@ Il s’appuie sur un **MCD (Modèle Conceptuel de Données)** et un **schéma re
 
 - **/filiere**  
   Permet de gérer les filières académiques et de regrouper les classes par spécialité.
+  Chaque niveau est rattaché à une filière via la clé étrangère filiere_id.
 
 - **/enseignement**  
-  Relie Professeur, Classe et Matière. C’est l’entité pivot qui garantit la cohérence des enseignements.
+  Relie Professeur, Matière et Niveau. C’est l’entité pivot qui garantit la cohérence des enseignements.
+
+  - **/appartenance** 
+  Gère l’appartenance des étudiants à une filière et à un niveau.
+  Permet de savoir dans quelle spécialité et à quel cycle un étudiant est inscrit.
+
+  - **/suivi** 
+  Permet de suivre la progression académique des étudiants (matières suivies, validations, parcours).
+  Sert de base pour analyser la réussite et l’évolution des étudiants dans leur filière.
 
 - **/inscription**  
   Gère l’inscription des étudiants dans les classes et leur participation aux matières.
