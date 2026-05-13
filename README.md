@@ -27,11 +27,11 @@ Il s’appuie sur un **MCD (Modèle Conceptuel de Données)** et un **schéma re
 - **/enseignement**  
   Relie Professeur, Matière et Niveau. C’est l’entité pivot qui garantit la cohérence des enseignements.
 
-  - **/appartenance** 
+- **/appartenance** 
   Gère l’appartenance des étudiants à une filière et à un niveau.
   Permet de savoir dans quelle spécialité et à quel cycle un étudiant est inscrit.
 
-  - **/suivi** 
+- **/suivi** 
   Permet de suivre la progression académique des étudiants (matières suivies, validations, parcours).
   Sert de base pour analyser la réussite et l’évolution des étudiants dans leur filière.
 
