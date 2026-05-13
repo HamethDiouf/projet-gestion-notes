@@ -43,8 +43,8 @@ Il s’appuie sur un **MCD (Modèle Conceptuel de Données)** et un **schéma re
 
 - **/images**  
   Regroupe les schémas du projet :  
-  - `mcd.png` → Modèle Conceptuel de Données  
-  - `relationnel.png` → Schéma relationnel enrichi  
+  - `Schema_relationnel_gestion_etudiants.drawio.png` → Modèle Conceptuel de Données  
+  - `Schema_relationnel_gestion_etudiants.drawio.png` → Schéma relationnel enrichi  
 
 
 - **📊 Diagrammes et fichiers sources**  
