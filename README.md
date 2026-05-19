@@ -59,6 +59,11 @@ Il s’appuie sur un **MCD (Modèle Conceptuel de Données)** et un **schéma re
   Fichier source du schéma relationnel, également modifiable avec [Draw.io](https://app.diagrams.net/#G1HOHCHRnpWBgg9OfAgcgCJq73GyXEaL8L#%7B%22pageId%22%3A%22c8D9N4k3m5zAeyCCimFC%22%7D).
 
 
+- **📑 Scripts SQL** 
+
+- **schema_gestion_notes.sql**   
+  Contient la définition complète du schéma de la base de données Gestion des Notes.
+  Ce fichier regroupe toutes les tables nécessaires (Niveau, Filiere, Etudiant, Matiere, Professeur, Suivi, Inscription, Enseigner, Evaluation, Appartenance.) et leurs relations.
 
 - **select.sql / postgres Local.session.sql**  
   Scripts SQL pour tester et exécuter les requêtes sur PostgreSQL.
