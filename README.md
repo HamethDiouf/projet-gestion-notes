@@ -65,7 +65,7 @@ Il s’appuie sur un **MCD (Modèle Conceptuel de Données)** et un **schéma re
   Contient la définition complète du schéma de la base de données Gestion des Notes.
   Ce fichier regroupe toutes les tables nécessaires (Niveau, Filiere, Etudiant, Matiere, Professeur, Suivi, Inscription, Enseignement, Evaluation, Appartenance.) et leurs relations.
 
-- **select.sql / postgres Local.session.sql**  
+- **select.sql**  
   Scripts SQL pour tester et exécuter les requêtes sur PostgreSQL.
 
 - **README.md**  
