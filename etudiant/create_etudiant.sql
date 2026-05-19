@@ -1,4 +1,6 @@
 -- Création de la table Etudiant 
+DROP TABLE IF EXISTS Etudiant CASCADE;
+
 CREATE TABLE Etudiant (
     id_etudiant SERIAL PRIMARY KEY,
     nom VARCHAR(50) NOT NULL,
@@ -6,5 +8,6 @@ CREATE TABLE Etudiant (
     date_naissance DATE,
     email VARCHAR(100) UNIQUE,
     adresse VARCHAR(150),
-    niveau_id INT REFERENCES Niveau(id_niveau)
+    niveau_id INT REFERENCES Niveau(id_niveau),
+    filiere_id INT REFERENCES Filiere(id_filiere)
 );

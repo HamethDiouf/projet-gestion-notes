@@ -71,12 +71,13 @@ SELECT * FROM Etudiant;
 -- Nombre d'étudiants par niveau avec filière
 SELECT n.niveau,
        f.nom_filiere,
-       COUNT(i.id_etudiant) AS nombre_etudiants
+       COUNT(e.id_etudiant) AS nombre_etudiants
 FROM Niveau n
-JOIN Filiere f ON n.filiere_id = f.id_filiere
-LEFT JOIN Inscription i ON n.id_niveau = i.id_niveau
+JOIN Etudiant e ON e.niveau_id = n.id_niveau
+JOIN Filiere f ON e.filiere_id = f.id_filiere
 GROUP BY n.id_niveau, n.niveau, f.nom_filiere
 ORDER BY n.niveau;
+
 
 -- Moyenne des notes par étudiant
 SELECT e.id_etudiant, e.nom, e.prenom, AVG(ev.note) AS moyenne
@@ -145,10 +146,6 @@ ORDER BY nb_notes DESC;
 -- =================================
 -- SECTION SUIVI
 -- =================================
--- Sélection de tous les suivis
--- Affichage du suivi des étudiants dans les matières avec les dates de début et fin ou en cours
-SELECT * FROM Suivi;
-
 -- Suivi des inscriptions et évaluations par étudiant
 SELECT e.id_etudiant, e.nom, e.prenom,
        n.niveau,
@@ -167,12 +164,16 @@ ORDER BY n.niveau, moyenne DESC;
 -- SECTION APPARTENANCE
 -- =================================
 -- Appartenance des étudiants à une filière et niveau
-SELECT e.id_etudiant, e.nom, e.prenom,
-       f.nom_filiere,
-       n.niveau
-FROM Etudiant e
-JOIN Inscription i ON e.id_etudiant = i.id_etudiant
-JOIN Niveau n ON i.id_niveau = n.id_niveau
-JOIN Filiere f ON n.filiere_id = f.id_filiere
-ORDER BY f.nom_filiere, n.niveau, e.nom;
+SELECT n.niveau,
+       f.nom_filiere AS filiere,
+       e.prenom,
+       e.nom
+FROM Niveau n
+JOIN Appartenance a ON n.id_niveau = a.niveau_id
+JOIN Filiere f ON a.filiere_id = f.id_filiere
+LEFT JOIN Etudiant e 
+       ON e.niveau_id = n.id_niveau 
+      AND e.filiere_id = f.id_filiere
+ORDER BY n.niveau, e.nom, e.prenom;
+
 

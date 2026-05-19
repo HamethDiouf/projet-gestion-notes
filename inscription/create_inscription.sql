@@ -1,4 +1,6 @@
 -- Table Inscription (relation Étudiant ↔ Niveau)
+DROP TABLE IF EXISTS Inscription CASCADE;
+
 CREATE TABLE Inscription (
     id_inscription SERIAL PRIMARY KEY,
     id_etudiant INT NOT NULL,

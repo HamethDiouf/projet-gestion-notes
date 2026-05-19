@@ -1,4 +1,6 @@
 -- Table Evaluation (relation Étudiant ↔ Matiere)
+DROP TABLE IF EXISTS Evaluation CASCADE;
+
 CREATE TABLE Evaluation (
     id_evaluation SERIAL PRIMARY KEY,
     id_etudiant INT REFERENCES Etudiant(id_etudiant),

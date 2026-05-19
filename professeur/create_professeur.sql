@@ -1,4 +1,6 @@
 -- Création de la table Professeur
+DROP TABLE IF EXISTS Professeur CASCADE;
+
 CREATE TABLE Professeur (
     id_prof SERIAL PRIMARY KEY,
     nom VARCHAR(50) NOT NULL,

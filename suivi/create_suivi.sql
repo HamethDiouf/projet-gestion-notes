@@ -1,4 +1,7 @@
 -- Création de la table Suivi (relation Étudiant ↔ Matière)
+
+DROP TABLE IF EXISTS Suivi CASCADE;
+
 CREATE TABLE Suivi (
     id_etudiant INT NOT NULL,
     id_matiere INT NOT NULL,
