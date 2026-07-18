@@ -12,6 +12,8 @@ enseignement/insert_enseignement.sql
 
 # Ignore SQL files in the professeur folder
 professeur/insert_exceptions.sql
+professeur/insert_professeur.sql
+
 
 # Ignore SQL files in the inscription folder
 inscription/insert_inscription_exceptions.sql
