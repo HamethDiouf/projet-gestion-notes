@@ -3,3 +3,24 @@
 
 # Ignore local PostgreSQL session file
 postgres_Local.session.sql
+
+# Ignore SQL files in the etudiant folder
+etudiant/insert_etudiant.sql
+
+# Ignore SQL files in the enseignement folder
+enseignement/insert_enseignement.sql
+
+# Ignore SQL files in the professeur folder
+professeur/insert_exceptions.sql
+
+# Ignore SQL files in the inscription folder
+inscription/insert_inscription_exceptions.sql
+inscription/insert_inscription_auto.sql
+
+# Ignore markdown files in approches_chargement folder
+approches_chargement/assistant.md
+approches_chargement/hybride.md
+
+# Ignore export data folder
+export_data/etudiants.csv
+export_data/etudiants.json
